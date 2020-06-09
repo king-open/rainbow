@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gif彩虹</title>
+    <style>
+        body {
+            background: linear-gradient(Lightblue, #6495ed);
+        }
+
+        .container {
+            /* border: 1px solid red; */
+            width: 170px;
+            height: 170px;
+            position: relative;
+            margin: 250px auto;
+        }
+
+        .rainbow {
+            /* border: 1px solid green; */
+            width: 70px;
+            height: 70px;
+            position: absolute;
+            top: 70px;
+            left: 80px;
+            margin-left: -40px;
+            border-radius: 170px 0 0 0;
+            box-shadow: #fb323c -2px -2px 0 1px,
+                #f99716 -4px -4px 0 3px,
+                #fee124 -6px -6px 0 5px,
+                #00ff00 -8px -8px 0 7px,
+                #6ad7f8 -10px -10px 0 9px,
+                #4b0080 -12px -12px 0 11px,
+                #a3459b -14px -14px 0 13px;
+            animation: rainbow 4s ease-in-out infinite;
+            transform: rotate(39deg);
+        }
+
+        @keyframes rainbow {
+            50% {
+                transform: rotate(45deg);
+            }
+        }
+
+        .rainbow::after {
+            content: '';
+            width: 110px;
+            height: 15px;
+            position: absolute;
+            bottom: -23px;
+            left: 17px;
+            background: #000;
+            border-radius: 50%;
+            opacity: 0.2;
+            animation: rainbow_shadow 4s ease-in-out infinite;
+            transform: rotate(-39deg);
+            transform-origin: 50 50%;
+
+        }
+
+        @keyframes rainbow_shadow {
+            50% {
+                transform: rotate(-50deg) translate(10px) scale(0.7);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="rainbow"></div>
+    </div>
+</body>
+
+</html>
